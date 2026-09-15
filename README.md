@@ -30,5 +30,4 @@ O projeto segue boas práticas de segurança recomendadas pelo Supabase e Postgr
 ├── index.html     # Interface do sistema e telas de autenticação
 ├── style.css      # Estilização moderna e responsiva
 ├── app.js         # Lógica de conexão, autenticação e gerenciamento de sessão
-├── schema.sql     # Script SQL com as tabelas, funções, triggers e políticas RLS
 └── README.md      # Documentação do projeto
