@@ -8,8 +8,69 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
+  <!-- Barra de status e botão de configuração -->
+  <div class="top-nav">
+    <div id="conn-status" class="conn-pill">
+      <span class="dot dot-green"></span> Conectado
+    </div>
+    <button id="open-config-btn" class="icon-btn" title="Configurar Conexão do Banco">
+      ⚙️ Conexão
+    </button>
+  </div>
+
   <div class="container">
 
+    <!-- Modal de Configuração Segura no Navegador -->
+    <div id="config-modal" class="modal hidden">
+      <div class="modal-content card">
+        <div class="header">
+          <div class="badge">Privacidade Local</div>
+          <h2>Conexão Supabase</h2>
+          <p>Suas chaves ficam guardadas <strong>apenas no seu navegador</strong>. Nada vai para o GitHub!</p>
+        </div>
+
+        <div id="config-alert" class="alert hidden"></div>
+
+        <form id="config-form">
+          <div class="form-group">
+            <label for="cfg-url">Project URL do Supabase</label>
+            <input
+              type="text"
+              id="cfg-url"
+              placeholder="https://seu-projeto.supabase.co"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label for="cfg-key">Publishable / Anon Key</label>
+              <button type="button" id="toggle-key-visibility" class="link-btn">Mostrar/Ocultar</button>
+            </div>
+            <input
+              type="password"
+              id="cfg-key"
+              placeholder="sb_publishable_... ou anon key"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Salvar no Meu Navegador
+          </button>
+          
+          <button type="button" id="clear-config-btn" class="btn btn-secondary">
+            Limpar Chaves Salvas
+          </button>
+          
+          <button type="button" id="close-config-btn" class="btn btn-text">
+            Fechar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Card de Login -->
     <div id="login-card" class="card">
       <div class="header">
         <div class="badge">Supabase Auth</div>
@@ -52,6 +113,7 @@
       </div>
     </div>
 
+    <!-- Card de Cadastro -->
     <div id="register-card" class="card hidden">
       <div class="header">
         <div class="badge">Novo Usuário</div>
@@ -102,6 +164,7 @@
       </div>
     </div>
 
+    <!-- Card de Boas-vindas -->
     <div id="welcome-card" class="card hidden" style="text-align: center;">
       <div class="header">
         <div class="badge">Autenticado</div>
@@ -120,8 +183,7 @@
     </div>
 
   </div>
-  
-  <script src="config.js"></script>
+
   <script src="app.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@ body {
   margin-bottom: 24px;
 }
 
-.header h1 {
+.header h1, .header h2 {
   font-size: 24px;
   font-weight: 700;
   color: #0f172a;
@@ -120,12 +120,23 @@ body {
   background-color: #ffffff;
   color: #475569;
   border: 1px solid #cbd5e1;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .btn-secondary:hover {
   background-color: #f8fafc;
   color: #1e293b;
+}
+
+.btn-text {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.btn-text:hover {
+  color: #0f172a;
 }
 
 .switch-text {
@@ -193,4 +204,117 @@ body {
 
 .user-info strong {
   color: #0f172a;
+}
+
+/* Barra superior com status e botão de configuração */
+.top-nav {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.conn-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-green {
+  background-color: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.dot-red {
+  background-color: #ef4444;
+}
+
+.icon-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.label-row label {
+  margin-bottom: 0;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #059669;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+/* Modal Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 440px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
