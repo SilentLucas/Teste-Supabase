@@ -1,5 +1,6 @@
-const SUPABASE_URL = "https://hrjhadycuxtpnqtswvkn.supabase.co";
-const SUPABASE_KEY = "sb_publishable_y78zyotv9Pzsl0oxqp6XIg_77B3d915";
+if (typeof SUPABASE_URL === "undefined" || typeof SUPABASE_KEY === "undefined") {
+  alert("Arquivo config.js não encontrado ou variáveis não definidas! Copie config.example.js para config.js e adicione suas chaves.");
+}
 
 const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
